@@ -13,6 +13,7 @@
             $arguments = explode('/', trim($url, '/'));
             $controllerName = array_shift($arguments); // product ; ProductController
             $controllerName = ucwords($controllerName) . "Controller";
+            
             if(count($arguments)> 0){
                 $method = array_shift($arguments); //show
             }else{

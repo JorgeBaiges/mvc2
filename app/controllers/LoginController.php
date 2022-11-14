@@ -11,9 +11,9 @@
             // metodo home de Controller de mvc00
         }
 
-        function login(){
-            print "<br>Dentro de login de LoginController";
-            // metodo login de Controller de mvc00
+        function show(){
+            print "<br>Dentro de show de LoginController";
+            // metodo show de Controller de mvc00
         }
 
     }//Fin_Clase

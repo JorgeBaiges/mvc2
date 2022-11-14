@@ -1,4 +1,5 @@
 <?php
+    require "../Product.php";
 
     class ProductController{
 
@@ -8,12 +9,15 @@
         }//fin_constructor
 
         function index(){
-            print "<br>Dentro de index de ProductController";
+            $products = Product::all();
+            require "../views/home.php";
             // metodo home de Controller de mvc00
         }
 
         function show(){
-            print "<br>Dentro de show de ProductController";
+            $id = $_GET["id"];
+            $product = Product::find($id);
+            require "../views/show.php";
             // metodo show de Controller de mvc00
         }
 
