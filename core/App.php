@@ -28,6 +28,7 @@
                 die("No encontrado");
             }
 
+            $controllerName = "\\App\\Controllers\\" . $controllerName;
             $controllerObject = new $controllerName;
 
             if(method_exists($controllerObject, $method)){

@@ -1,6 +1,7 @@
 <?php
 
     namespace App\Controllers;
+    include "../Product.php";
 
     class ProductController{
 
