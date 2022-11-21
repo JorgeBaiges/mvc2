@@ -22,5 +22,4 @@
             require "../views/show.php";
             // metodo show de Controller de mvc00
         }
-
     }//Fin_Clase
