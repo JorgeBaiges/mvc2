@@ -15,4 +15,3 @@
         public static function delete(){}
         public static function save(){}
     }
-    
