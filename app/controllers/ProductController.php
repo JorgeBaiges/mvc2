@@ -6,9 +6,10 @@
 
     class ProductController{
 
-        public function __construct(){
-            
-        }
+        function __construct()
+        {
+            print "<br>Constructor clase ProductController";
+        }//fin_constructor
 
         function index(){
             $products = Product::all();
