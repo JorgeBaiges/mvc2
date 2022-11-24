@@ -3,10 +3,17 @@ namespace App\Models; # declaro namespace
 
 require_once '../core/Model.php'; # preparo el acceso a otro fichero
 use PDO;
-use Core\Model; # sigo preparando mediante use.
+use Core\Model;
+use \DateTime; # sigo preparando mediante use.
 
 class Product extends Model
 {
+
+    public function __construct()
+{
+    $this->fecha_compra = DateTime::createFromFormat('Y-m-d', $this->fecha_compra);
+}
+
     public static function all()
     {
         $db = Product::db();
