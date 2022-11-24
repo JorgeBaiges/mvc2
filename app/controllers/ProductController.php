@@ -12,15 +12,15 @@
         }//fin_constructor
 
         function index(){
-            $users = Product::all();
-            require "../views/home.php";
+            $products = Product::all();
+            require "../app/views/product/index.php";
             // metodo home de Controller de mvc00
         }
 
-        function show(){
-            $id = $_GET["id"];
+        public function show($args){
+            list($id) = $args;
             $product = Product::find($id);
-            require "../views/show.php";
+            require ('../app/views/product/show.php');
             // metodo show de Controller de mvc00
         }
 
