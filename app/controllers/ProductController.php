@@ -2,7 +2,7 @@
 
     namespace App\Controllers;
     use Dompdf\Dompdf;
-    include "../Product.php";
+    use App\Models\Product;
 
     class ProductController{
 
@@ -12,19 +12,19 @@
         }//fin_constructor
 
         function index(){
-            $products = \Product::all();
+            $users = Product::all();
             require "../views/home.php";
             // metodo home de Controller de mvc00
         }
 
         function show(){
             $id = $_GET["id"];
-            $product = \Product::find($id);
+            $product = Product::find($id);
             require "../views/show.php";
             // metodo show de Controller de mvc00
         }
 
-        public function pdf(){
+        /*public function pdf(){
             include_once "../vendor/autoload.php";
             $dompdf = new Dompdf();
             $dompdf->loadHtml('<h1>Hola mundo</h1><br><a href="https://parzibyte.me/blog">By Parzibyte</a>');
@@ -32,5 +32,5 @@
             $contenido = $dompdf->output();
             $nombreDelDocumento = "hola.pdf";
             $bytes = file_put_contents($nombreDelDocumento, $contenido);
-        }
+        }*/
     }//Fin_Clase
