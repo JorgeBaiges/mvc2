@@ -114,16 +114,17 @@
         </style>
     </head>
     <body>
+        POR ALGUN MOTIVO QUE DESCONOZCO SOLO PUEDE LOGEARSE CON adminuser / admindwes
         <div class="centrar">
             <h1>Login</h1>
-            <form method="post">
+            <form action="?method=credenciales" method="post">
                 <div class="estilo">
-                    <input type="text" required>
+                    <input type="text" name="user" required>
                     <span></span>
                     <label>Usuario</label>
                 </div>
                 <div class="estilo">
-                    <input type="password" required>
+                    <input type="password" name="psword" required>
                     <span></span>
                     <label>Contraseña</label>
                 </div>
