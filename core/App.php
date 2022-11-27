@@ -148,7 +148,7 @@
             }
 
             $bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
+            //USAMOS SENTENCIAS PREPARADAS PARA EVITAR ATAQUES SQLINJECTOR
             $sentencia = $bd->prepare("INSERT INTO persona (Nombre,Apellidos,Direccion,Telefono) VALUES (?,?,?,?)");
 
             $sentencia->bindParam(1, $name);
@@ -191,7 +191,7 @@
                 header("Location: ?method=home");
 
             } else {
-                //DEVOLVERA UN ERROR
+                //DEVOLVERA UN ERROR EJECUTADO EN LA VISTA ADDPERSONA
                 header("Location: ?method=addPerson&result=NOK");
 
             }
@@ -249,7 +249,7 @@
             
             $sql = "SELECT Nombre FROM persona WHERE Nombre='$user'";
             $registros = $bd->query($sql);
-
+            //COMPROBAMOS QUE EL USUARIO EXISTE ANTES DE BORRARLO
             if( $registros->rowCount() > 0) {
 
                 $sentencia = $bd->prepare("DELETE FROM persona WHERE Nombre='$user'");
@@ -266,6 +266,7 @@
 
         public function updateUser(){
             
+            //USAMOS SESIONES PARA VARIAR UN POCO
             require_once ("conecta.php");
             $bd = new PDO(DSN,USUARIO,CLAVE);
             $_SESSION["nombre"] = $_POST["nombre"];
